@@ -25,7 +25,7 @@ const Mainadmin = () => {
     <>
       <Container>
         <hr />
-        <Link to=""><Button className="btn-success">Agregar</Button></Link>
+        <Link to='/agregar' ><Button className="btn-success">Agregar</Button></Link>
         <br />
         <br />
 

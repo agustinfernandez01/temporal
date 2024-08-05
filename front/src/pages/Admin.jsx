@@ -1,6 +1,8 @@
 import React from "react";
 import Mainadmin from "../componentes/Mainadmin";
 import { Container } from "react-bootstrap";
+import '../css/admin.css'
+
 
 const Admin = () => {
   return (

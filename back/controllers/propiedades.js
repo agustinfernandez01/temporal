@@ -11,16 +11,12 @@ const allProp = ( req , res ) => {
   });
 };
 
-const singleProp = () => {
-  const query = 'select * from propiedades where id = ?';
+const singleProp = ( req , res) => {
+  const query = "select * from propiedades where provincia = 'Tucuman' and id = ?";
+  const { id } = req.params
   conection.query( query , [id] ,( error , results ) => {
     if ( error ) throw error; // si hay algun error en la consulta tira error
-    if (results.length > 0){
-      res.json(results[0])
-    }
-    else{
-      res.status(404).alert("Propiedad no encontrada.")
-    }
+    res.json( results[0] ); // porque se lo pone en un array al resultado ?
   });
 };
 //FIN FUNCIONES QUERY PARA LA PAGINA CLIENTE (SOLO SE MUESTRA)

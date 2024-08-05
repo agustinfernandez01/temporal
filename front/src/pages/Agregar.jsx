@@ -1,10 +1,10 @@
 import React from 'react'
-import {Form} from 'react-bootstrap'
+import Mainagregar from '../componentes/Mainagregar'
 
 const Agregar = () => {
   return (
     <div>
-        
+      <Mainagregar/>
     </div>
   )
 }

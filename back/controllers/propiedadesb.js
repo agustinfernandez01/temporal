@@ -16,13 +16,14 @@ const allPropb = (req, res) => {
 };
 
 const singlePropb = (req,res) => {
-    const query = 'select * from propiedades where id = ? and provincia = Buenos aires'
+    const { id } = req.params
+    const query = "select * from propiedades where id = ? and provincia = 'Buenos aires';"
     conection.query(query,[id],(error,result)=>{
         if (error){
             throw error
         }
         else{
-            res.json(result[0]);
+            res.json( result[0] );
         }
     })
 };
