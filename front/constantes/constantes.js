@@ -1,0 +1,1 @@
+export const URL_PROPIEDADEST = "http://localhost:8000/propiedades/"

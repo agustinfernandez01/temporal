@@ -1,0 +1,16 @@
+create table propiedades(
+id (INT, PRIMARY KEY, AUTO_INCREMENT):Identificador único para cada propiedad
+titulo (VARCHAR(255)): Título o nombre de la propiedad.
+descripcion (TEXT): Descripción detallada de la propiedad.
+direccion (VARCHAR(255)): Dirección física de la propiedad.
+ciudad (VARCHAR(100)): Ciudad donde se encuentra la propiedad.
+provincia (VARCHAR(100)): Estado o provincia donde se encuentra la propiedad.
+codigo_postal (VARCHAR(20)): Código postal de la propiedad.
+precio (DECIMAL(10, 2)): Precio de la propiedad.
+tamaño (INT): Tamaño de la propiedad en metros cuadrados.
+habitaciones (INT): Número de habitaciones.
+baños (INT): Número de baños.
+tipo (ENUM): Tipo de propiedad (por ejemplo, 'Casa', 'Departamento', 'Terreno', etc.).
+estado_propiedad (ENUM): Estado de la propiedad (por ejemplo, 'Disponible', 'Vendido', 'Alquilado', etc.).
+imagenes (VARCHAR(255)): URL o ruta de las imágenes de la propiedad (puede ser una cadena separada por comas si hay varias imágenes).
+);

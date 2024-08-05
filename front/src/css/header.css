@@ -1,0 +1,9 @@
+#header1{
+    background-color: #5e5e5e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.enlaces{
+    margin: 30px;
+    text-decoration: none;
+}
