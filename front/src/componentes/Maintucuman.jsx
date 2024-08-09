@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import HeaderL from './HeaderL'
+
 
 const Maintucuman = () => {
   const [tucuman, setTucuman] = useState([]);
@@ -20,6 +22,7 @@ const Maintucuman = () => {
   useEffect(() => {
     mostrarPropiedades();
   }, []);
+
 
   return (
     /* LISTAS DE PROPIEDADES */

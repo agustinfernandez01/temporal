@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
 import "../css/header.css";
-import { Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap"
+import icono from '../assets/icono1.png'; 
 
 const Header = () => {
   return (
     <>
       <Navbar id="header1" className="navbar">
-        <a className="navbar-brand mx-auto" href="#">
+        <Link to="/" className="navbar-brand mx-auto" href="#">
           <img
-            src="src/assets/icono3.png"
+            src={icono}
             alt="Logo"
-            width="75"
+            width="70"
             height="60"
             className="d-inline-block align-text-top"
           ></img>
-        </a>
+        </Link>
       </Navbar>
     </>
   );

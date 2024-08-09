@@ -17,6 +17,17 @@ const Mainadmin = () => {
     }
   };
 
+  const eliminarProp = async (id) => {  
+    try{
+      await axios.delete(`http://localhost:8000/delete/${id}`)
+      // Actualizar la lista de propiedades después de la eliminación
+      setAdprop(adprop.filter(propiedad => propiedad.id !== id));
+    }
+    catch (error){
+      alert("Error en eliminar la propiedad")
+    }
+  }
+
   useEffect(() => {
     mostrarpropsAd();
   }, []);
@@ -46,7 +57,11 @@ const Mainadmin = () => {
                 <td>{propiedadad.provincia}</td>
                 <td>{propiedadad.direccion}</td>
                 <td>{propiedadad.tipo}</td>
-                <td><Button className="btn-success">Ver</Button><Button className="btn-primary m-1 ">Editar</Button><Button className="btn-danger">Eliminar</Button></td>
+                <td>
+                <Link to={`/admin/ver/${propiedadad.id}`} ><Button className="btn-success" >Ver</Button></Link>
+                <Button className="btn-primary m-1 ">Editar</Button>
+                <Button className="btn-danger" onClick={()=>{eliminarProp(propiedadad.id)}}>Eliminar</Button>
+                </td>
               </tr>
             </tbody>
           ))}

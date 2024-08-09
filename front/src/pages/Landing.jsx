@@ -5,6 +5,9 @@ import Mainlanding from "../componentes/Mainlanding";
 
 
 const Landing = () => {
+
+  const header1 = HeaderL
+
   return (
     <>
       <HeaderL />

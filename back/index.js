@@ -11,6 +11,7 @@ const admin = require("./routes/admin")
 
 const app = express(); //ejecutando express
 
+app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"))
 

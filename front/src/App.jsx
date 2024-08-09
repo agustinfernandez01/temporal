@@ -8,8 +8,13 @@ import Maintucuman from './componentes/Maintucuman'
 import Mainadmin from './componentes/Mainadmin'
 import Mainbsas from './componentes/Mainbsas'
 import Agregar from './pages/Agregar'
-import Mainpropiedad from './componentes/Mainpropiedad'
-import Singleprop from './pages/Singleprop'
+import Mainpropiedadt from './componentes/Mainpropiedadt'
+import Singlepropt from './pages/Singlepropt'
+import Singlepropb from './pages/Singlepropb'
+import Verprop from './pages/Verprop'
+import Mainverprop from './componentes/Mainverprop'
+import './css/app.css'
+
 
 
 
@@ -23,13 +28,16 @@ function App() {
           {/*TUCUMAN*/}
           <Route path='/Tucuman' element={<Tucuman/>}/>
           <Route path="/propiedadest" element={<Maintucuman/>}></Route>
-          {/* PROPIEDAD */}
-          <Route path="/propiedadest/:id" element={<Singleprop/>}></Route>
-          <Route path="/propiedad" element={<Mainpropiedad/>}></Route>
+          <Route path="/propiedadest/:id" element={<Singlepropt/>}></Route>
+          <Route path="/propiedadest" element={<Mainpropiedadt/>}></Route>
           {/*BUENOS AIRES*/}
           <Route path='/buenosaires' element={<Bsas/>}/>
           <Route path="/propiedadesb" element={<Mainbsas/>}></Route>
+          <Route path='/propiedadesb/:id' element={<Singlepropb/>}></Route>
+          <Route path="/propiedadesb" element={<Mainpropiedadt/>}></Route>
           {/*Admin*/}
+          <Route path='/admin/ver/:id' element={<Verprop/>}> </Route>
+          <Route path='/admin/mainver' element={<Mainverprop/>}> </Route>
           <Route path='/administracion' element={<Mainadmin/>}></Route>
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/agregar' element={<Agregar/>}/>

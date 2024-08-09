@@ -6,7 +6,7 @@ import Maintucuman from '../../componentes/Maintucuman'
 
 const Tucuman = () => {
 
-
+ 
   return (
     <>
     <HeaderL/>
