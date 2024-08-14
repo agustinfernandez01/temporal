@@ -14,6 +14,7 @@ import Singlepropb from './pages/Singlepropb'
 import Verprop from './pages/Verprop'
 import Mainverprop from './componentes/Mainverprop'
 import './css/app.css'
+import Verpropb from './pages/Verpropb'
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/propiedadesb/:id' element={<Singlepropb/>}></Route>
           <Route path="/propiedadesb" element={<Mainpropiedadt/>}></Route>
           {/*Admin*/}
+          <Route path='/admin/verb/:id' element={<Verpropb/>}></Route>
           <Route path='/admin/ver/:id' element={<Verprop/>}> </Route>
           <Route path='/admin/mainver' element={<Mainverprop/>}> </Route>
           <Route path='/administracion' element={<Mainadmin/>}></Route>

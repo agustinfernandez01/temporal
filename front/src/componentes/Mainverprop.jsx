@@ -1,10 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
-import { useNavigate, useParams } from 'react-router-dom'
-import Admin from '../pages/Admin'
-
-
+import { useParams } from 'react-router-dom'
 
 const Mainverprop = () => {
 
@@ -16,7 +13,6 @@ const Mainverprop = () => {
         try{
             const response = await axios.get(`http://localhost:8000/propiedades/${id}`);
             setVer(response.data)
-            useNavigate(<Admin/>)
 
         }
         catch(error){

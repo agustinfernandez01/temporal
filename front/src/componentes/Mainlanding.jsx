@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row , Col , Button } from "react-bootstrap";
-import {Link} from 'react-router-dom'
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Tucuman from "../pages/zonas/Tucuman";
 
 const Mainlanding = () => {
@@ -8,47 +8,132 @@ const Mainlanding = () => {
     <>
       <Container>
         <Row>
-          <Col md={5} className="mx-auto">
-            <h1>Tempor.ar, alquileres temporales en Tucuman</h1>
-            <p>
-              Encontra el alojamiento que estas buscando para una estadia de
-              calidad!
-            </p>
-            <hr />
+          <Col md={11} className="mx-auto">
+            <br />
+            <Container id="Nosotros">
+              <br />
+              <Card
+                className="p-4 shadow-sm"
+                style={{ backgroundColor: "#f8f9fa", borderColor: "#e3e3e3" }}
+              >
+                <Card.Body>
+                  <h2 className="text-center text-decoration-underline">
+                    Bienvenidos a Temporal
+                  </h2>
+                  <br />
+                  <p className="text-large">
+                    Nos especializamos en ofrecer alquileres temporales que se
+                    adaptan a tus necesidades. Ya sea que estés buscando un
+                    lugar acogedor para tus vacaciones, una opción cómoda para
+                    un viaje de negocios, o una solución a corto plazo mientras
+                    encuentras tu hogar ideal, estamos aquí para ayudarte.
+                    Nuestra pequeña empresa se enorgullece de brindar un
+                    servicio personalizado y de alta calidad.
+                    <br />
+                    <br />- En Temporal, tu comodidad y satisfacción son nuestra
+                    prioridad.
+                  </p>
+                </Card.Body>
+              </Card>
+            </Container>
           </Col>
         </Row>
         <br />
         {/* Cards con Zonas */}
-        <div className="row row-cols-1 row-cols-md-2 g-4">
-          <div className="col">
-            {/* Yerba Buena */}
-            <div className="card">
-              <img src="https://media.istockphoto.com/id/1137375765/es/foto/casa-del-gobierno-de-tucum%C3%A1n-oficina-p%C3%BAblica-local-san-miguel-de-tucuman-argentina.jpg?s=1024x1024&w=is&k=20&c=kBzqQqzjhVRiyS5Y02JWxHPNHL-ccm86R7HCXjT_a2o=" className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Tucuman</h5>
-                <p className="card-text">
-                Tucumán es una ciudad en el noroeste de Argentina, conocida por su clima agradable y su ambiente acogedor. Es ideal para vivir, con buenos servicios y un entorno verde.
-                </p>
+        <Container className="my-4">
+          <Card
+            className="p-4 shadow-sm"
+            style={{
+              backgroundColor: "#f8f9fa",
+              borderColor: "#e3e3e3",
+              borderRadius: "10px",
+            }}
+          >
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+              <div className="col">
+                <Card className="h-100">
+                  <Card.Img
+                    variant="top"
+                    src="https://media.istockphoto.com/id/1137375765/es/foto/casa-del-gobierno-de-tucum%C3%A1n-oficina-p%C3%BAblica-local-san-miguel-de-tucuman-argentina.jpg?s=1024x1024&w=is&k=20&c=kBzqQqzjhVRiyS5Y02JWxHPNHL-ccm86R7HCXjT_a2o="
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                  <Card.Body className="d-flex flex-column">
+                    <Card.Title>Tucuman</Card.Title>
+                    <Card.Text className="flex-grow-1">
+                      Tucumán es una ciudad en el noroeste de Argentina,
+                      conocida por su clima agradable y su ambiente acogedor. Es
+                      ideal para vivir, con buenos servicios y un entorno verde.
+                    </Card.Text>
+                    <Link to={"/Tucuman"} style={{ textDecoration: "none" }}>
+                      <Button
+                        style={{
+                          backgroundColor: "#FE6F01",
+                          borderColor: "orange",
+                          color: "white",
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = "#5e5e5e";
+                          e.currentTarget.style.borderColor = "#5e5e5e";
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = "#FE6F01";
+                          e.currentTarget.style.borderColor = "orange";
+                        }}
+                        className="mt-auto"
+                      >
+                        Ver propiedades
+                      </Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
               </div>
-              <Link to={"/Tucuman"} className="mx-auto mb-2" style={{ textDecoration: 'none' }}><Button style={{ backgroundColor: '#FE6F01', borderColor: 'orange', color: 'white', }} onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#5e5e5e'; e.currentTarget.style.borderColor = '#5e5e5e'; }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#FE6F01'; e.currentTarget.style.borderColor = 'orange';}}>
-                Ver</Button></Link>
-            </div>
-          </div>
-          <div className="col">
-            {/* San Miguel de tucuman */}
-            <div className="card">
-              <img src="https://blogskystorage.s3.amazonaws.com/2021/07/skyairline_skyairline_image_182.jpeg" className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Buenos aires</h5>
-                <p className="card-text">
-                Buenos Aires es la capital de Argentina, conocida por su vibrante vida urbana y su rica cultura. Ofrece una amplia variedad de servicios, entretenimiento y un ambiente dinámico, ideal para vivir en el corazón de la ciudad.
-                </p>
+              <div className="col">
+                <Card className="h-100">
+                  <Card.Img
+                    variant="top"
+                    src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/05/10/16837113541343.jpg"
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                  <Card.Body className="d-flex flex-column">
+                    <Card.Title>Buenos Aires</Card.Title>
+                    <Card.Text className="flex-grow-1">
+                      Buenos Aires es la capital de Argentina, conocida por su
+                      vibrante vida urbana y su rica cultura. Ofrece una amplia
+                      variedad de servicios, entretenimiento y un ambiente
+                      dinámico, ideal para vivir en el corazón de la ciudad.
+                    </Card.Text>
+                    <Link
+                      to={"/Buenosaires"}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Button
+                        style={{
+                          backgroundColor: "#FE6F01",
+                          borderColor: "orange",
+                          color: "white",
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = "#5e5e5e";
+                          e.currentTarget.style.borderColor = "#5e5e5e";
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = "#FE6F01";
+                          e.currentTarget.style.borderColor = "orange";
+                        }}
+                        className="mt-auto"
+                      >
+                        Ver propiedades
+                      </Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
               </div>
-              <Link to={"/Buenosaires"} className="mx-auto mb-2" style={{ textDecoration: 'none' }}><Button style={{ backgroundColor: '#FE6F01', borderColor: 'orange', color: 'white', }} onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#5e5e5e'; e.currentTarget.style.borderColor = '#5e5e5e'; }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#FE6F01'; e.currentTarget.style.borderColor = 'orange';}}>
-                Ver</Button></Link>
             </div>
-          </div>
-        </div>
+          </Card>
+        </Container>
+        <br />
+        <hr />
+        <br />
       </Container>
     </>
   );
