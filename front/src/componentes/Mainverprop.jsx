@@ -28,7 +28,7 @@ const Mainverprop = () => {
 
   return (
     <div>
-        <Container className='text-center'>
+        <Container key={ver.id} className='text-center'>
         <h1 className='text-decoration-underline' >Detalles de la propiedad</h1>
 
         <h5>Titulo</h5>
@@ -65,6 +65,11 @@ const Mainverprop = () => {
         <hr />
         <h5>Tipo de propiedad</h5>
         <p>{ver.tipo}</p>
+
+        <hr />
+        <h5>Imagenes</h5>
+        <p>{ver.imagenes}</p>
+
         </Container>
     </div>
   )

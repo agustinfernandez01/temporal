@@ -1,9 +1,18 @@
-#detalles{
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
-    text-align:left;
-}
+.carousel-container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor del carrusel */
+    padding: 20px; /* Espaciado interno para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: invert(1); /* Cambia el color de las flechas para que sean visibles sobre un fondo blanco */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo para las flechas */
+    border-radius: 50%; /* Flechas redondeadas */
+  }
+  
