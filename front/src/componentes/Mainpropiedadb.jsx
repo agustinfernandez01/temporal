@@ -4,8 +4,8 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const Mainpropiedadb = () => {
-  const [propb, setPropb] = useState(null);
   const { id } = useParams();
+  const [propb, setPropb] = useState(null);
 
   const singlepropbs = async () => {
     try {
@@ -20,32 +20,61 @@ const Mainpropiedadb = () => {
   };
 
   useEffect(() => {
-    singlepropbs();
+    if (id) {
+      singlepropbs();
+    }
   }, [id]);
 
   if (propb === null) {
     return <p>Cargando propiedad...</p>;
   }
 
+  // Verifica si hay imágenes para mostrar y asegúrate de que `imagenes` es un array
+  let imagenes = Array.isArray(propb.imagenes) ? propb.imagenes : [];
+
   return (
     <div>
       {propb ? (
         <>
           <Container>
-            <h1> {propb.titulo}</h1> <br />
-            {/* IMAGENES */}
+            <h1>{propb.titulo}</h1>
+            <br />
+            {/* IMÁGENES */}
             <Container>
               <div id="carouselExample" className="carousel slide">
                 <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img src="" className="d-block w-100" alt="..." />
-                  </div>
-                  <div className="carousel-item">
-                    <img src="" className="d-block w-100" alt="..." />
-                  </div>
-                  <div className="carousel-item">
-                    <img src="" className="d-block w-100" alt="..." />
-                  </div>
+                  {imagenes.length > 0 ? (
+                    imagenes.map((imagen, index) => (
+                      <div
+                        className={`carousel-item ${index === 0 ? "active" : ""}`}
+                        key={index}
+                      >
+                        <img
+                          src={`data:${imagen.type};base64,${imagen.data}`}
+                          className="d-block w-100"
+                          alt={`Imagen ${index + 1}`}
+                          style={{
+                            objectFit: "contain",
+                            height: "auto",
+                            maxHeight: "500px",
+                          }}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className="carousel-item active">
+                      <img
+                        src="path/to/default-image.jpg" // Puedes poner una imagen por defecto si no hay imágenes
+                        className="d-block w-100"
+                        alt="Imagen predeterminada"
+                        style={{
+                          objectFit: "contain",
+                          height: "auto",
+                          maxHeight: "500px",
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
                 <button
                   className="carousel-control-prev"
@@ -74,7 +103,7 @@ const Mainpropiedadb = () => {
               </div>
             </Container>
             <hr />
-            {/* TITULO Y QUE CONTIENE (CAMAS,HABITACIONES,ETC) */}
+            {/* TITULO Y QUE CONTIENE (CAMAS, HABITACIONES, ETC) */}
             <h2>
               {propb.tipo} | {propb.direccion}
             </h2>
@@ -82,14 +111,15 @@ const Mainpropiedadb = () => {
               {propb.capacidad} {"personas"} • {propb.habitaciones} {"habitaciones"} • {propb.baños} {"baños"}
             </p>
             <hr />
-            {/* DESCRIPCION */}
+            {/* DESCRIPCIÓN */}
             <p>{propb.descripcion}</p>
             {/* QUE OFRECE */}
             <h3>Servicios que ofrece :</h3>
+            <p>{propb.servicios}</p>
           </Container>
         </>
       ) : (
-        <></>
+        <p>Propiedad no encontrada</p>
       )}
     </div>
   );

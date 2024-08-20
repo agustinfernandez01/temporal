@@ -104,6 +104,7 @@ const Mainpropiedad = () => {
             <p>{papel.descripcion}</p>
             {/* QUE OFRECE */}
             <h3>Servicios que ofrece :</h3>
+            <p>{papel.servicios}</p>
           </Container>
         </>
       ) : (

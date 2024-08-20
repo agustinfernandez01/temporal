@@ -26,7 +26,7 @@ const setProp = (req, res) => {
             return res.status(500).send("Error al subir las imágenes");
         }
 
-        const { titulo, descripcion, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo } = req.body;
+        const { titulo, descripcion, servicios, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo } = req.body;
 
         // Verificar que se hayan subido archivos
         if (!req.files || req.files.length === 0) {
@@ -42,9 +42,9 @@ const setProp = (req, res) => {
         // Convertir el array de imágenes a JSON para almacenarlo en la base de datos
         const imagenesJSON = JSON.stringify(imagenes);
 
-        const query = "INSERT INTO propiedades (titulo, descripcion, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo, imagenes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        const query = "INSERT INTO propiedades (titulo, descripcion, servicios, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo, imagenes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        conection.query(query, [titulo, descripcion, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo, imagenesJSON], (error, results) => {
+        conection.query(query, [titulo, descripcion, servicios, direccion, ciudad, provincia, capacidad, habitaciones, baños, tipo, imagenesJSON], (error, results) => {
             if (error) {
                 console.error("Error al insertar datos: ", error);
                 return res.status(500).send("Error al insertar datos");
@@ -53,6 +53,7 @@ const setProp = (req, res) => {
         });
     });
 };
+
 
 
 // -----------------------

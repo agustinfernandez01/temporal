@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Button , Container , Row , Col} from "react-bootstrap";
+import { Card, Button, Container, Row, Col, CardImg } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Mainbsas = () => {
@@ -12,7 +12,7 @@ const Mainbsas = () => {
       setBuenosaires(response.data);
       console.log(response.data);
     } catch (error) {
-      console.error("error en la peticion");
+      console.error("Error al obtener las propiedades: " + error);
     }
   };
 
@@ -32,16 +32,17 @@ const Mainbsas = () => {
       <Container>
         <Row>
           {buenosaires.map((propiedadb) => (
-            <Col
-              key={propiedadb.id}
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
-              className="mb-4"
-            >
+            <Col key={propiedadb.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
               <Card style={{ width: "100%", height: "100%" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <CardImg
+                  variant="top"
+                  src={
+                    propiedadb.imagenes && propiedadb.imagenes.length > 0
+                      ? `data:${propiedadb.imagenes[0].type};base64,${propiedadb.imagenes[0].data}`
+                      : "path/to/default-image.jpg" // Reemplaza con la ruta de la imagen predeterminada si es necesario
+                  }
+                  style={{ objectFit: 'cover', height: '200px' }}
+                />
                 <Card.Body>
                   <Card.Title>{propiedadb.titulo}</Card.Title>
                   <Card.Text>{propiedadb.descripcion}</Card.Text>

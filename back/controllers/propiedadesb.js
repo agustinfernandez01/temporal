@@ -4,28 +4,72 @@ const { conection } = require("../config/DB");
 
 // funciones para propiedades yerba buena
 const allPropb = (req, res) => {
-  const query = "select * from propiedades where provincia = 'Buenos Aires';";
-  conection.query(query, (error, result) => {
-    if (error){
-        throw error 
-    }
-    else{
-        res.json(result)
-    }
-  });
-};
+    const query = "SELECT id, titulo, descripcion, imagenes FROM propiedades WHERE provincia = 'Buenos Aires';";
+  
+    conection.query(query, (error, results) => {
+      if (error) {
+        console.error("Error en la consulta:", error);
+        res.status(500).json({ message: "Error en la consulta" });
+        return;
+      }
+  
+      const formattedResults = results.map(propiedad => {
+        if (propiedad.imagenes) {
+          try {
+            const imagesArray = JSON.parse(propiedad.imagenes);
+            propiedad.imagenes = imagesArray.map(img => ({
+              type: img.type,
+              data: img.data,
+            }));
+          } catch (parseError) {
+            console.error("Error al parsear JSON:", parseError);
+            propiedad.imagenes = [];
+          }
+        } else {
+          propiedad.imagenes = [];
+        }
+        return propiedad;
+      });
+  
+      res.json(formattedResults);
+    });
+  };
+  
 
-const singlePropb = (req,res) => {
-    const { id } = req.params
-    const query = "select * from propiedades where id = ? and provincia = 'Buenos aires';"
-    conection.query(query,[id],(error,result)=>{
-        if (error){
-            throw error
+  const singlePropb = (req, res) => {
+    const query = "SELECT * FROM propiedades WHERE provincia = 'Buenos Aires' AND id = ?";
+    const { id } = req.params;
+  
+    conection.query(query, [id], (error, results) => {
+      if (error) {
+        console.error("Error en la consulta: " + error);
+        return res.status(500).json({ message: 'Error en el servidor' });
+      }
+  
+      if (results.length > 0) {
+        const propiedad = results[0];
+  
+        // Convertimos el campo de imágenes a un array de objetos con base64
+        if (propiedad.imagenes) {
+          try {
+            propiedad.imagenes = JSON.parse(propiedad.imagenes).map(imagen => ({
+              data: imagen.data, // Los datos base64 de la imagen
+              type: imagen.type  // El tipo MIME de la imagen
+            }));
+          } catch (err) {
+            propiedad.imagenes = [];
+            console.error("Error al parsear JSON de imágenes: " + err);
+          }
+        } else {
+          propiedad.imagenes = [];
         }
-        else{
-            res.json( result[0] );
-        }
-    })
-};
+  
+        res.json(propiedad);
+      } else {
+        res.status(404).json({ message: 'Propiedad no encontrada' });
+      }
+    });
+  };
+  
 
 module.exports = { allPropb , singlePropb }

@@ -13,6 +13,7 @@ const Mainagregar = () => {
   const [habitaciones, setHabitaciones] = useState("");
   const [baños, setBaños] = useState("");
   const [tipo, setTipo] = useState("");
+  const [servicios, setServicios] = useState(""); // Nuevo estado para servicios
   const [imagenes, setImagenes] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -28,6 +29,7 @@ const Mainagregar = () => {
     formData.append("habitaciones", habitaciones);
     formData.append("baños", baños);
     formData.append("tipo", tipo);
+    formData.append("servicios", servicios); // Agregar servicios a FormData
 
     // Agregar múltiples imágenes al FormData
     for (let i = 0; i < imagenes.length; i++) {
@@ -83,6 +85,14 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setDireccion(e.target.value)}
+            />
+          </Form.Group>
+          {/* SERVICIOS */}
+          <Form.Group className="mb-3"> {/* Nuevo campo de servicios */}
+            <Form.Label>Servicios</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={(e) => setServicios(e.target.value)}
             />
           </Form.Group>
           {/* CIUDAD */}
@@ -197,6 +207,7 @@ const Mainagregar = () => {
               required
               onChange={(e) => setTipo(e.target.value)}
             >
+              <option value="">Seleccion el tipo de vivienda</option>
               <option value="Casa">Casa</option>
               <option value="Departamento">Departamento</option>
             </Form.Select>
