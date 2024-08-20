@@ -46,7 +46,9 @@ const Mainpropiedadb = () => {
                   {imagenes.length > 0 ? (
                     imagenes.map((imagen, index) => (
                       <div
-                        className={`carousel-item ${index === 0 ? "active" : ""}`}
+                        className={`carousel-item ${
+                          index === 0 ? "active" : ""
+                        }`}
                         key={index}
                       >
                         <img
@@ -102,20 +104,32 @@ const Mainpropiedadb = () => {
                 </button>
               </div>
             </Container>
+
             <hr />
-            {/* TITULO Y QUE CONTIENE (CAMAS, HABITACIONES, ETC) */}
-            <h2>
-              {propb.tipo} | {propb.direccion}
-            </h2>
-            <p>
-              {propb.capacidad} {"personas"} • {propb.habitaciones} {"habitaciones"} • {propb.baños} {"baños"}
-            </p>
+
+            <Container className="p-4 border rounded shadow-sm">
+              <h2>
+                {propb.tipo} | {propb.direccion}
+              </h2>
+              <p>
+                {propb.capacidad} {"personas"} • {propb.habitaciones}{" "}
+                {"habitaciones"} • {propb.baños} {"baños"}
+              </p>
+              <p>{propb.descripcion}</p>
+              <h3>Servicios que ofrece :</h3>
+              <p>{propb.servicios}</p>
+            </Container>
+
             <hr />
-            {/* DESCRIPCIÓN */}
-            <p>{propb.descripcion}</p>
-            {/* QUE OFRECE */}
-            <h3>Servicios que ofrece :</h3>
-            <p>{propb.servicios}</p>
+            <Container className="p-4 border rounded shadow-sm">
+              <h3>Consultar por esta propiedad:</h3>
+              <a
+                href={`https://wa.me/5493814151764?text=%20Hola!%20me%20gustaria%20saber%20más%20sobre%20la%20propiedad:%20${propb.titulo}.%20Muchas%20gracias!`}
+                target="_blank"
+              >
+                <i className="fa-brands fa-whatsapp fa-xl"></i>
+              </a>
+            </Container>
           </Container>
         </>
       ) : (

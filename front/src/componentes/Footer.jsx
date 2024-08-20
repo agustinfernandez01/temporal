@@ -18,9 +18,8 @@ const Footer = () => {
               </p>
               </Col>
               <div className="d-flex">
-                <i className="fa-brands fa-instagram fa-xl m-2"></i>
-                <i className="fa-brands fa-facebook fa-xl m-2"></i>
-                <i className="fa-brands fa-whatsapp fa-xl m-2"></i>
+               <a href="https://www.instagram.com/temporal.home/" style={{ color: 'inherit', textDecoration: 'none' }} target="_blank"><i className="fa-brands fa-instagram fa-xl m-2"></i></a> 
+               <a href={`https://wa.me/5493814151764`} style={{ color: 'inherit', textDecoration: 'none' }} target="_blank"><i className="fa-brands fa-whatsapp fa-xl m-2"></i></a> 
               </div>
             </Col>
           </Row>
