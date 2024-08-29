@@ -24,16 +24,16 @@ const Maintucuman = () => {
     <div>
       <br />
       <Container>
-        <h2 className="text-center text-decoration-underline">
+        <h3 className="text-center text-decoration-none fw-bold">
           Nuestras propiedades en Tucuman
-        </h2>
+        </h3>
       </Container>
       <br />
       <Container>
         <Row>
           {tucuman.map((inmueble) => (
             <Col key={inmueble.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-              <Card style={{ width: "100%", height: "100%" }}>
+              <Card className="d-flex flex-column" style={{ width: "100%", height: "100%" }}>
                 <CardImg
                   variant="top"
                   src={
@@ -43,9 +43,9 @@ const Maintucuman = () => {
                   }
                   style={{ objectFit: 'cover', height: '200px' }}
                 />
-                <Card.Body>
+                <Card.Body className="d-flex flex-column">
                   <Card.Title>{inmueble.titulo}</Card.Title>
-                  <Card.Text>{inmueble.descripcion}</Card.Text>
+                  <Card.Text className="flex-grow-1">{inmueble.descripcion}</Card.Text>
                   <Link to={`/propiedadest/${inmueble.id}`}>
                     <Button
                       style={{

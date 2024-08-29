@@ -17,18 +17,17 @@ const Mainlanding = () => {
                 style={{ backgroundColor: "#f8f9fa", borderColor: "#e3e3e3" }}
               >
                 <Card.Body>
-                  <h2 className="text-center text-decoration-underline">
-                    Bienvenidos a Temporal
-                  </h2>
+                  <h4 className="text-center text-decoration-none fw-bold">
+                    Descubre tu Estancia Perfecta con{" "}
+                    <span style={{ color: "#FE6F01" }}>Temporal </span>!
+                  </h4>
                   <br />
-                  <p className="text-large">
-                    Nos especializamos en ofrecer alquileres temporales que se
-                    adaptan a tus necesidades. Ya sea que estés buscando un
-                    lugar acogedor para tus vacaciones, una opción cómoda para
-                    un viaje de negocios, o una solución a corto plazo mientras
-                    encuentras tu hogar ideal, estamos aquí para ayudarte.
-                    Nuestra pequeña empresa se enorgullece de brindar un
-                    servicio personalizado y de alta calidad.
+                  <p className="text-large text-center">
+                    Ofrecemos alquileres temporales ideales para vacaciones,
+                    viajes de negocios o estadías cortas. Nuestra prioridad es
+                    brindarte comodidad y un servicio personalizado que se
+                    ajuste a tus necesidades. ¡Estamos aquí para hacer tu
+                    estancia inolvidable!
                     <br />
                     <br />- En Temporal, tu comodidad y satisfacción son nuestra
                     prioridad.

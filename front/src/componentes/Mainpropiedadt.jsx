@@ -36,7 +36,7 @@ const Mainpropiedad = () => {
       {papel ? (
         <>
           <Container>
-            <h1>{papel.titulo}</h1>
+          <h1 className="text-decoration-none fw-bold">{papel.titulo} - {papel.ciudad}</h1>
             <br />
             {/* IMÁGENES */}
             <Container>
@@ -107,8 +107,13 @@ const Mainpropiedad = () => {
 <hr />
 
 <Container className="p-4 border rounded shadow-sm">
-  <h3>Consultar por esta propiedad:</h3>
- <a href={`https://wa.me/5493814151764?text=%20Hola!%20Me%20gustaria%20saber%20más%20sobre%20la%20propiedad:%20${papel.titulo}.%20Muchas%20gracias!`} target="_blank"><i className="fa-brands fa-whatsapp fa-xl"></i></a> 
+  <h4>Contacto</h4>
+  <p>Si deseas más información, detalles específicos o simplemente quieres conocer más sobre esta propiedad, no dudes en contactarnos.
+
+Puedes hacer clic en el enlace a continuación para iniciar una conversación directa con nosotros a través de WhatsApp. ¡Estaremos encantados de ayudarte en lo que necesites!
+
+Consultar por esta propiedad en WhatsApp</p>
+ <a href={`https://wa.me/5493814151764?text=%20Hola!%20Me%20gustaria%20saber%20más%20sobre%20la%20propiedad:%20${papel.titulo}.%20Muchas%20gracias!`} target="_blank">Hace click aca por mas informacion sobre esta propiedad en WhatsApp</a> 
 </Container>
 
           </Container>

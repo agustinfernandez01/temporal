@@ -15,6 +15,8 @@ import Verprop from './pages/Verprop'
 import Mainverprop from './componentes/Mainverprop'
 import './css/app.css'
 import Verpropb from './pages/Verpropb'
+import Loginad from './pages/Loginad'
+import Mainloginad from './componentes/Mainloginad'
 
 
 
@@ -42,6 +44,8 @@ function App() {
           <Route path='/admin/mainver' element={<Mainverprop/>}> </Route>
           <Route path='/administracion' element={<Mainadmin/>}></Route>
           <Route path='/admin' element={<Admin/>}/>
+          <Route path='/logadmin' element={<Loginad/>}></Route>
+          <Route path='/logadminbody' element={<Mainloginad/>}></Route>
           <Route path='/agregar' element={<Agregar/>}/>
         </Routes>
       </BrowserRouter>

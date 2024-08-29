@@ -24,16 +24,16 @@ const Mainbsas = () => {
     <div>
       <br />
       <Container>
-        <h2 className="text-center text-decoration-underline">
+        <h3 className="text-center text-decoration-none fw-bold">
           Nuestras propiedades en Buenos Aires
-        </h2>
+        </h3>
       </Container>
       <br />
       <Container>
         <Row>
           {buenosaires.map((propiedadb) => (
             <Col key={propiedadb.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-              <Card style={{ width: "100%", height: "100%" }}>
+              <Card className='d-flex flex-column' style={{ width: "100%", height: "100%" }}>
                 <CardImg
                   variant="top"
                   src={
@@ -43,9 +43,9 @@ const Mainbsas = () => {
                   }
                   style={{ objectFit: 'cover', height: '200px' }}
                 />
-                <Card.Body>
+                <Card.Body className="d-flex flex-column">
                   <Card.Title>{propiedadb.titulo}</Card.Title>
-                  <Card.Text>{propiedadb.descripcion}</Card.Text>
+                  <Card.Text className="flex-grow-1">{propiedadb.descripcion}</Card.Text>
                   <Link to={`/propiedadesb/${propiedadb.id}`}>
                     <Button
                       style={{

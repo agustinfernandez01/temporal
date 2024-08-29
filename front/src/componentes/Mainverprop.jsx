@@ -66,10 +66,6 @@ const Mainverprop = () => {
         <h5>Tipo de propiedad</h5>
         <p>{ver.tipo}</p>
 
-        <hr />
-        <h5>Imagenes</h5>
-        <p>{ver.imagenes}</p>
-
         </Container>
     </div>
   )

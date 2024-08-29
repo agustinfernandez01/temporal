@@ -8,3 +8,4 @@ router.post("/insert",setProp)
 router.delete("/delete/:id",deleteProp)
 
 module.exports = router
+
