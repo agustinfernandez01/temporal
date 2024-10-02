@@ -58,6 +58,33 @@ const setProp = (req, res) => {
 
 // -----------------------
 
+const upProp = (req, res) => {
+    const { id } = req.params; // Obtenemos el ID de la URL
+    const { titulo, descripcion, direccion, provincia, capacidad, habitaciones, baños, tipo } = req.body; // Datos que queremos actualizar
+  
+    const query = `
+      UPDATE propiedades
+      SET titulo = ?, descripcion = ?, direccion = ?, provincia = ?, capacidad = ?, habitaciones = ?, baños = ?, tipo = ?
+      WHERE id = ?
+    `;
+  
+    const values = [titulo, descripcion, direccion, provincia, capacidad, habitaciones, baños, tipo, id];
+  
+    conection.query(query, values, (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Error al actualizar la propiedad" });
+      }
+  
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ error: "Propiedad no encontrada" });
+      }
+  
+      res.json({ message: "Propiedad actualizada correctamente" });
+    });
+  };
+
+// -----------------------
 const deleteProp = (req,res) =>{
 
     const id = req.params.id
@@ -72,4 +99,4 @@ const deleteProp = (req,res) =>{
     })
 }
 
-module.exports = { allPropsad , setProp , deleteProp}
+module.exports = { allPropsad , setProp , deleteProp , upProp}

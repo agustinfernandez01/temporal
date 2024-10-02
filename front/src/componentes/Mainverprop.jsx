@@ -31,7 +31,7 @@ const Mainverprop = () => {
         <Container key={ver.id} className='text-center'>
         <h1 className='text-decoration-underline' >Detalles de la propiedad</h1>
 
-        <h5>Titulo</h5>
+        <h5 >Titulo</h5>
         <p>{ver.titulo}</p>
 
         <hr />

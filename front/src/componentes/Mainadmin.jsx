@@ -26,13 +26,23 @@ const Mainadmin = () => {
     }
   }
 
-  const handleClick = (propiedadad) => {
+
+  const Verprop = (propiedadad) => {
     if (propiedadad.provincia === "Buenos Aires") {
       navigate(`/admin/verb/${propiedadad.id}`);
     } else if(propiedadad.provincia === "Tucuman") {
       navigate(`/admin/ver/${propiedadad.id}`);
     }
   };
+
+  const Vereprop = (propiedadad) => {
+    if (propiedadad.provincia === "Buenos Aires") {
+      navigate(`/admin/update/${propiedadad.id}`);
+    } else if(propiedadad.provincia === "Tucuman") {
+      navigate(`/admin/update/${propiedadad.id}`);
+    }
+  };
+
 
   useEffect(() => {
     mostrarpropsAd();
@@ -64,8 +74,8 @@ const Mainadmin = () => {
                 <td>{propiedadad.direccion}</td>
                 <td>{propiedadad.tipo}</td>
                 <td>
-                  <Button className="btn-success" onClick={() => handleClick(propiedadad)}>Ver</Button>
-                  <Button className="btn-primary m-1">Editar</Button>
+                  <Button className="btn-success" onClick={() => Verprop(propiedadad)}>Ver</Button>
+                  <Button className="btn-primary m-1" onClick={() => Vereprop(propiedadad)}>Editar</Button>
                   <Button className="btn-danger" onClick={() => eliminarProp(propiedadad.id)}>Eliminar</Button>
                 </td>
               </tr>

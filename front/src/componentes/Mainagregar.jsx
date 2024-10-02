@@ -69,6 +69,7 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setTitulo(e.target.value)}
+              required
             />
           </Form.Group>
           {/* DESCRIPCION */}
@@ -77,6 +78,7 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setDescripcion(e.target.value)}
+              required
             />
           </Form.Group>
           {/* DIRECCION */}
@@ -85,6 +87,7 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setDireccion(e.target.value)}
+              required
             />
           </Form.Group>
           {/* SERVICIOS */}
@@ -93,6 +96,7 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setServicios(e.target.value)}
+              required
             />
           </Form.Group>
           {/* CIUDAD */}
@@ -101,6 +105,7 @@ const Mainagregar = () => {
             <Form.Control
               type="text"
               onChange={(e) => setCiudad(e.target.value)}
+              required
             />
           </Form.Group>
           {/* PROVINCIA */}

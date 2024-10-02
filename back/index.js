@@ -8,6 +8,7 @@ const {conection} = require("./config/DB");
 const propiedades = require("./routes/propiedades")
 const propiedadesb = require("./routes/propiedadesb")
 const admin = require("./routes/admin")
+const {DB_PORT} = require("./config/config")
 
 const app = express(); //ejecutando express
 
@@ -25,10 +26,9 @@ app.get("/", (req,res)=>{
     res.send({message:"bienvenidos a la api"});
 });
 
-const port = 8000; // este código está estableciendo que tu servidor web escuchará las conexiones en el puerto 8000.
 
-app.listen(port,()=>{
-    console.log("Escuchando en el puerto  "+ port);
+app.listen(DB_PORT,()=>{
+    console.log("Escuchando en el puerto  "+ DB_PORT);
 });
 
 

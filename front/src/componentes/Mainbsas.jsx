@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Button, Container, Row, Col, CardImg } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../css/mainbsas.css"
 
 const Mainbsas = () => {
   const [buenosaires, setBuenosaires] = useState([]);
@@ -24,8 +25,8 @@ const Mainbsas = () => {
     <div>
       <br />
       <Container>
-        <h3 className="text-center text-decoration-none fw-bold">
-          Nuestras propiedades en Buenos Aires
+        <h3 id="titulobs" className="text-center text-decoration-none fw-bold">
+          BUENOS AIRES
         </h3>
       </Container>
       <br />
@@ -44,14 +45,22 @@ const Mainbsas = () => {
                   style={{ objectFit: 'cover', height: '200px' }}
                 />
                 <Card.Body className="d-flex flex-column">
-                  <Card.Title>{propiedadb.titulo}</Card.Title>
-                  <Card.Text className="flex-grow-1">{propiedadb.descripcion}</Card.Text>
+                  <Card.Title style={{
+                fontFamily: "Kanit",
+                fontWeight: 400,
+              }}>{propiedadb.titulo}</Card.Title>
+                  <Card.Text style={{
+                fontFamily: "Kanit",
+                fontWeight: 300,
+              }} className="flex-grow-1">{propiedadb.descripcion}</Card.Text>
                   <Link to={`/propiedadesb/${propiedadb.id}`}>
                     <Button
                       style={{
                         backgroundColor: "#FE6F01",
                         borderColor: "orange",
                         color: "white",
+                        fontFamily:"Kanit",
+                        fontWeight:300
                       }}
                       onMouseOver={(e) => {
                         e.currentTarget.style.backgroundColor = "#5e5e5e";

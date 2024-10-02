@@ -1,5 +1,5 @@
 import React from "react";
-import Mainpropiedadb from "../componentes/Mainpropiedadb";
+import Mainpropiedadb from  "../componentes/Mainpropiedadb.jsx"
 import HeaderL from "../componentes/HeaderL";
 import Footer from "../componentes/Footer";
 

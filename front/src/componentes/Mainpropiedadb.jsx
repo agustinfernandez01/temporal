@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import "../css/singlepb.css";
 
 const Mainpropiedadb = () => {
   const { id } = useParams();
@@ -37,7 +38,13 @@ const Mainpropiedadb = () => {
       {propb ? (
         <>
           <Container>
-            <h1 className="text-decoration-none fw-bold">
+            <h1
+              style={{
+                fontFamily: "Kanit",
+                fontWeight: 500,
+              }}
+              className="text-decoration-none"
+            >
               {propb.titulo} - {propb.ciudad}
             </h1>
             <br />
@@ -110,22 +117,43 @@ const Mainpropiedadb = () => {
             <hr />
 
             <Container className="p-4 border rounded shadow-sm">
-              <h2>
+              <h2 style={{
+                fontFamily: "Kanit",
+                fontWeight: 400,
+              }}>
                 {propb.tipo} | {propb.direccion}
               </h2>
-              <p>
+              <p style={{
+                fontFamily: "Kanit",
+                fontWeight: 300,
+              }}>
                 {propb.capacidad} {"personas"} • {propb.habitaciones}{" "}
                 {"habitaciones"} • {propb.baños} {"baños"}
               </p>
-              <p>{propb.descripcion}</p>
-              <h3>Servicios que ofrece :</h3>
-              <p>{propb.servicios}</p>
+              <p style={{
+                fontFamily: "Kanit",
+                fontWeight: 300,
+              }}>{propb.descripcion}</p>
+              <h3 style={{
+                fontFamily: "Kanit",
+                fontWeight: 400,
+              }}>Servicios que ofrece :</h3>
+              <p style={{
+                fontFamily: "Kanit",
+                fontWeight: 300,
+              }}>{propb.servicios}</p>
             </Container>
 
             <hr />
             <Container className="p-4 border rounded shadow-sm">
-              <h4>Contacto</h4>
-              <p>
+              <h4 style={{
+                fontFamily: "Kanit",
+                fontWeight: 400,
+              }}>Contacto</h4>
+              <p style={{
+                fontFamily: "Kanit",
+                fontWeight: 300,
+              }}>
                 Si deseas más información, detalles específicos o simplemente
                 quieres conocer más sobre esta propiedad, no dudes en
                 contactarnos. Puedes hacer clic en el enlace a continuación para
@@ -136,7 +164,10 @@ const Mainpropiedadb = () => {
               <a
                 href={`https://wa.me/5493814151764?text=%20Hola!%20Me%20gustaria%20saber%20más%20sobre%20la%20propiedad:%20${propb.titulo}.%20Muchas%20gracias!`}
                 target="_blank"
-              >
+                style={{
+                  fontFamily: "Kanit",
+                  fontWeight: 300,
+                }}>
                 Hace click aca por mas informacion sobre esta propiedad en
                 WhatsApp
               </a>

@@ -43,6 +43,7 @@ const Mainloginad = () => {
               value={user}
               onChange={(e) => setUser(e.target.value)}
               className="border-primary"
+              required
             />
           </FormGroup>
           <FormGroup className="mb-4">
@@ -53,6 +54,7 @@ const Mainloginad = () => {
               value={pass}
               onChange={(e) => setPass(e.target.value)}
               className="border-primary"
+              required
             />
           </FormGroup>
           <Button type="submit" className="w-100 btn-primary">
