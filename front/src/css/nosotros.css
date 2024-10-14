@@ -4,26 +4,25 @@
     margin: 0 15px; /* Espaciado entre las tarjetas */
   }
 #titulon{
-    font-family: "Kanit", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 700;
     font-size: 40px;
-    font-style: normal;
+
 }
 #tituloc{
-    font-family: "Kanit", sans-serif;
-    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
     font-size: 27px;
-    font-style: normal;
-    font-weight: bold; /* Negrita para los títulos */
+     
   margin-bottom: 10px;
 }
 .textosc{
     text-align:center;
-    font-family: "Kanit", sans-serif;
-    font-weight: 300;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
-    font-style: normal;
+    
 }
 .cntcards{
     height: 200px;
@@ -39,8 +38,8 @@
 }
 #texton{
     font-size: 20px;
-    font-family: "Kanit", sans-serif;
-    font-weight: 200;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
     font-size: 25px;
-    font-style: normal;
+    
 }

@@ -1,12 +1,11 @@
 #titulo1{
-    font-family: "Kanit", sans-serif;
-    font-weight: 700;
-    font-size: 50px;
-    font-style: normal;
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  font-style: normal;
 }
 #titulo2{
-    font-family: "Kanit", sans-serif;
-    font-weight: 100;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
     font-size: 30px;
-    font-style: normal;
 }

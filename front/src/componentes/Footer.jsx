@@ -14,8 +14,8 @@ const Footer = () => {
             <Col>
               <p style={{
                 color: "white",
-                fontFamily: "Kanit",
-                fontWeight: 200,
+                fontFamily: "Lato",
+                fontWeight: 400,
               }}className="m-0 text-start">© 2024 Temporal.</p>
             </Col>
             <div className="d-flex">

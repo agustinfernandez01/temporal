@@ -40,7 +40,7 @@ const Mainpropiedad = () => {
           <Container>
             <h1
               style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 500,
               }}
               className="text-decoration-none "
@@ -119,14 +119,14 @@ const Mainpropiedad = () => {
             <Container className="p-4 border rounded shadow-sm">
               <h2
                 style={{
-                  fontFamily: "Kanit",
-                  fontWeight: 300,
+                  fontFamily: "Lato",
+                  fontWeight: 400,
                 }}
               >
                 {papel.tipo} | {papel.direccion}
               </h2>
               <p style={{
-                    fontFamily: "Kanit",
+                    fontFamily: "Lato",
                     fontWeight: 300,
                   }}>
                 {papel.capacidad} {"personas"} • {papel.habitaciones}{" "}
@@ -134,15 +134,15 @@ const Mainpropiedad = () => {
               </p>
 
               <p style={{
-                    fontFamily: "Kanit",
+                    fontFamily: "Lato",
                     fontWeight: 300,
                   }} >{papel.descripcion}</p>
               <h3 style={{
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
+                    fontFamily: "Lato",
+                    fontWeight: 400,
                   }}>Servicios que ofrece :</h3>
               <p style={{
-                    fontFamily: "Kanit",
+                    fontFamily: "Lato",
                     fontWeight: 300,
                   }}>{papel.servicios}</p>
             </Container>
@@ -151,11 +151,11 @@ const Mainpropiedad = () => {
 
             <Container className="p-4 border rounded shadow-sm">
               <h4 style={{
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
+                    fontFamily: "Lato",
+                    fontWeight: 400,
                   }}>Contacto</h4>
               <p style={{
-                    fontFamily: "Kanit",
+                    fontFamily: "Lato",
                     fontWeight: 300,
                   }}>
                 Si deseas más información, detalles específicos o simplemente

@@ -40,7 +40,7 @@ const Mainpropiedadb = () => {
           <Container>
             <h1
               style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 500,
               }}
               className="text-decoration-none"
@@ -118,28 +118,28 @@ const Mainpropiedadb = () => {
 
             <Container className="p-4 border rounded shadow-sm">
               <h2 style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 400,
               }}>
                 {propb.tipo} | {propb.direccion}
               </h2>
               <p style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 300,
               }}>
                 {propb.capacidad} {"personas"} • {propb.habitaciones}{" "}
                 {"habitaciones"} • {propb.baños} {"baños"}
               </p>
               <p style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 300,
               }}>{propb.descripcion}</p>
               <h3 style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 400,
               }}>Servicios que ofrece :</h3>
               <p style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 300,
               }}>{propb.servicios}</p>
             </Container>
@@ -147,11 +147,11 @@ const Mainpropiedadb = () => {
             <hr />
             <Container className="p-4 border rounded shadow-sm">
               <h4 style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 400,
               }}>Contacto</h4>
               <p style={{
-                fontFamily: "Kanit",
+                fontFamily: "Lato",
                 fontWeight: 300,
               }}>
                 Si deseas más información, detalles específicos o simplemente
@@ -165,7 +165,7 @@ const Mainpropiedadb = () => {
                 href={`https://wa.me/5493814151764?text=%20Hola!%20Me%20gustaria%20saber%20más%20sobre%20la%20propiedad:%20${propb.titulo}.%20Muchas%20gracias!`}
                 target="_blank"
                 style={{
-                  fontFamily: "Kanit",
+                  fontFamily: "Lato",
                   fontWeight: 300,
                 }}>
                 Hace click aca por mas informacion sobre esta propiedad en

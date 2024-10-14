@@ -1,12 +1,32 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { Container , Button , Form } from 'react-bootstrap';
 import HeaderL from "../componentes/HeaderL"
 import Footer from '../componentes/Footer';
 import '../css/contacto.css'
-
-
+import emailjs from '@emailjs/browser';
 
 const Contactanos = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ciblhad', 'template_wrz5t9e', form.current, {
+        publicKey: 'ji8DK8xy0i2zK0ZpG',
+      })
+      .then(
+        () => {
+          alert('Mensaje enviado correctamente');
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+  
   return (
     <div>
       <HeaderL/>
@@ -16,12 +36,13 @@ const Contactanos = () => {
         <h2 id="tltoc" className="text-center">
           CONTACTANOS
         </h2>
-        <Form>
+        <Form ref={form} onSubmit={sendEmail}>
           <div className="mb-3">
             <label id='txtc' htmlFor="exampleInputName" className="form-label">
               Nombre
             </label>
             <input
+            name='user_name'
               type="text"
               className="form-control small-input" // Usa la clase personalizada
               id='txtc'
@@ -34,6 +55,7 @@ const Contactanos = () => {
               Email
             </label>
             <input
+              name='user_email'
               type="email"
               className="form-control small-input" // Usa la clase personalizada
               id='txtc'
@@ -58,13 +80,14 @@ const Contactanos = () => {
                 Mensaje
             </label>
             <textarea
+              name='message'
               className="form-control small-textarea" // Usa la clase personalizada
               id='txtc'
               rows="4" // Ajusta la altura del textarea
               placeholder='¿ En que podemos ayudarte ?'
             ></textarea>
           </div>
-          <Button
+          <Button type='submit'
             style={{
               backgroundColor: "#5e5e5e",
               borderColor: "#5e5e5e",
@@ -80,7 +103,7 @@ const Contactanos = () => {
             }}
             className="mt-auto m-2">
             Enviar
-          </Button>
+          </Button >
         </Form>
         <br />
         <br />

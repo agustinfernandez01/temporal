@@ -24,7 +24,7 @@ const Zonas = () => {
               <Card.Body>
                 <Card.Title
                   style={{
-                    fontFamily: "Kanit",
+                    fontFamily: "Lato",
                     fontWeight: 300,
                   }}
                   id="tituloc"
@@ -35,8 +35,8 @@ const Zonas = () => {
 
                 <Card.Text
                   style={{
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
+                    fontFamily: "Lato",
+                    fontWeight: 400,
                   }}
                 >
                   Tucumán es un centro estratégico en el noroeste argentino,
@@ -49,7 +49,7 @@ const Zonas = () => {
                       backgroundColor: "#5e5e5e",
                       borderColor: "#5e5e5e",
                       color: "white",
-                      fontFamily: "Kanit",
+                      fontFamily: "Lato",
                       fontWeight: 300,
                     }}
                     onMouseOver={(e) => {
@@ -78,8 +78,8 @@ const Zonas = () => {
               <Card.Body>
                 <Card.Title id="tituloc">BUENOS AIRES</Card.Title>
                 <Card.Text style={{
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
+                    fontFamily: "Lato",
+                    fontWeight: 400,
                   }}>
                   Buenos Aires, capital cosmopolita de Argentina, ofrece
                   excelentes oportunidades inmobiliarias gracias a su
@@ -91,7 +91,7 @@ const Zonas = () => {
                       backgroundColor: "#5e5e5e",
                       borderColor: "#5e5e5e",
                       color: "white",
-                      fontFamily: "Kanit",
+                      fontFamily: "Lato",
                     fontWeight: 300,
                     }}
                     onMouseOver={(e) => {

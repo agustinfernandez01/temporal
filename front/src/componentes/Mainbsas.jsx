@@ -46,12 +46,12 @@ const Mainbsas = () => {
                 />
                 <Card.Body className="d-flex flex-column">
                   <Card.Title style={{
-                fontFamily: "Kanit",
-                fontWeight: 400,
+                fontFamily: "Lato",
+                fontWeight: 600,
               }}>{propiedadb.titulo}</Card.Title>
                   <Card.Text style={{
-                fontFamily: "Kanit",
-                fontWeight: 300,
+                fontFamily: "Lato",
+                fontWeight: 400,
               }} className="flex-grow-1">{propiedadb.descripcion}</Card.Text>
                   <Link to={`/propiedadesb/${propiedadb.id}`}>
                     <Button
@@ -59,7 +59,7 @@ const Mainbsas = () => {
                         backgroundColor: "#FE6F01",
                         borderColor: "orange",
                         color: "white",
-                        fontFamily:"Kanit",
+                        fontFamily:"Lato",
                         fontWeight:300
                       }}
                       onMouseOver={(e) => {

@@ -21,10 +21,6 @@ import Update from "./pages/Update"
 import Contactanos from './pages/Contactanos'
 import './css/app.css'
 
-
-
-
-
 function App() {
 
   return (
